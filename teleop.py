@@ -24,17 +24,17 @@ class TeleopKeyboard(Node):
         return ch
 
     def run(self):
-        print("Usa le frecce per muovere il robot. CTRL+C per uscire.")
+        print("Use keyboard arrows to move the robot. CTRL+C to exit.")
         while True:
             key = self.get_key()
             msg = Twist()
-            if key == '\x1b[A':    # su
+            if key == '\x1b[A':    # up
                 msg.linear.x = 0.4
-            elif key == '\x1b[B':  # giù
+            elif key == '\x1b[B':  # down
                 msg.linear.x = -0.2
-            elif key == '\x1b[C':  # destra
+            elif key == '\x1b[C':  # right
                 msg.angular.z = -1.0
-            elif key == '\x1b[D':  # sinistra
+            elif key == '\x1b[D':  # left
                 msg.angular.z = 1.0
             elif key == '\x03':    # CTRL+C
                 break
